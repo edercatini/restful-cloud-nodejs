@@ -25,3 +25,14 @@ module.exports.createBucket = (json) => {
         }
     });
 }
+
+module.exports.deleteBucket = (json) => {
+
+    s3.deleteBucket(json, function(err, data) {
+        if (err) {
+            console.log(err, err.stack);
+        } else {
+            console.log(data);
+        }
+    });
+}
